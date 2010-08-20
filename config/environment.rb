@@ -39,6 +39,11 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
+  config.action_controller.session = {
+    :key => '_table_vision_session_id',
+    :secret      => '8fc080370e56e929a2d5afca5540a0f7'
+  }
+
   # Using database to store sessions.
   config.action_controller.session_store = :active_record_store
   

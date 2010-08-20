@@ -3709,3 +3709,259 @@ Processing UserController#send_password_reset (for 127.0.0.1 at 2010-08-11 23:54
 Rendering template within layouts/application
 Rendering user/forgot_password
 Completed in 326ms (View: 251, DB: 1) | 200 OK [http://localhost/user/send_password_reset]
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100807063218)
+Migrating to CreateSessions (20100808002906)
+Migrating to AddResetTokenToUser (20100811230940)
+Migrating to AddRememberMeToUser (20100818061036)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "remember_token_expires_at" time[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "remember_token" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100818061036')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#logout (for 127.0.0.1 at 2010-08-17 23:48:13) [GET]
+
+ActionView::MissingTemplate (Missing template user/logout.erb in view path app/views):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:53:41) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/new
+Completed in 64ms (View: 12, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:53:56) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/new
+Completed in 169ms (View: 59, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:53:58) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/new
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:54:23) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:54:29) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"PLomFfoNfbRm2GF5doRPD5xhgpDziQc37ZYj1ltzvoQ=", "user"=>{"username"=>"test1", "password"=>"abc123"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 23ms (View: 7, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:55:11) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 90ms (View: 18, DB: 0) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:55:17) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"6mNsFsZ9vspH09t+A0Wv9dEk0vEQgaHcdTuA5LnAyDE=", "user"=>{"username"=>"test1", "password"=>"abc123"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:56:24) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 98ms (View: 27, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:56:30) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"/BxUIxusVuf82kGSRhdr5s7rCDaagH/SKdru1RV2zHQ=", "user"=>{"username"=>"test1", "password"=>"abc123"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:57:28) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"/BxUIxusVuf82kGSRhdr5s7rCDaagH/SKdru1RV2zHQ=", "user"=>{"username"=>"test1", "password"=>"abc123"}}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (106.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (unprocessable_entity)
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:57:38) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 95ms (View: 29, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-17 23:57:42) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"jFoJsoulAEzy9NEGy3eMPkecTbjeBs8GM8mZHNBt0c4=", "user"=>{"username"=>"test1", "password"=>"abc123"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 00:00:32) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 00:00:52) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 00:01:06) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 91ms (View: 19, DB: 0) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 00:01:11) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"Pvu1cHRI2+r2ym6sqEuWU8xXrkU195+8BdpVLRAagq4=", "username"=>"test1", "password"=>"abc123"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'test1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 17ms (View: 3, DB: 1) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options. (called from /Users/sarveshtelang/projects/tablevision/app/controllers/application_controller.rb:14)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 00:02:07) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"tG9/v9LbnsYkwLP884/C9zy/sUWB9ElXEN01VKebYJw=", "username"=>"test1", "password"=>"abc123"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'test1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 22:53:13) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 152ms (View: 66, DB: 26) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 22:53:25) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 233ms (View: 72, DB: 0) | 200 OK [http://localhost/user/login]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 22:53:31) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"LNM8Cxz2tkzwRcA79Tgi3Du/68HWHUrarWAl7acuAjY=", "username"=>"test1", "password"=>"abc123"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'test1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 22:54:05) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 224ms (View: 117, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-18 22:54:09) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"nkV7nbYRE8GYkzFekot47XscFzS5sJmq6tuakgRSVsU=", "username"=>"test1", "password"=>"abc123"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'test1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/user/login]

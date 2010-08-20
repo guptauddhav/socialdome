@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100811230940) do
+ActiveRecord::Schema.define(:version => 20100818061036) do
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(:version => 20100811230940) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "firstname",       :null => false
-    t.string   "lastname",        :null => false
-    t.string   "username",        :null => false
-    t.string   "email",           :null => false
-    t.string   "hashed_password", :null => false
-    t.string   "salt",            :null => false
+    t.string   "firstname",                 :null => false
+    t.string   "lastname",                  :null => false
+    t.string   "username",                  :null => false
+    t.string   "email",                     :null => false
+    t.string   "hashed_password",           :null => false
+    t.string   "salt",                      :null => false
     t.string   "ip_address"
     t.boolean  "active"
     t.datetime "last_login_date"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20100811230940) do
     t.string   "activation_id"
     t.datetime "updated_at"
     t.string   "reset_token"
+    t.time     "remember_token_expires_at"
+    t.string   "remember_token"
   end
 
 end
