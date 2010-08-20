@@ -6,6 +6,42 @@
         <%= javascript_include_tag :defaults %>
     </head>
     <body>
-        <%= yield %>
+        <div id="toplinks">
+            <% if !logged_in? %>
+            <%= link_to 'Sign Up', '/user/new' %>
+            <% end %>
+            <% if logged_in? %>
+            <%= link_to 'Change Password', '/users/change_password' %>
+            <% end %>
+        </div>
+		
+		
+        <div id="login_logout">
+            <% if @current_user %>
+            Logged in as: <%= @current_user.username %>
+            <em><%= link_to "(Logout)", '/user/logout' %></em>
+            <% else %>
+            <em>Not logged in.</em>
+            <%= link_to 'Login', '/user/login' %>
+            <% end %>
+        </div>
+        
+		<div class="clear">
+        </div>
+        
+		<% unless flash[:notice].blank? %>
+	        <div id="notification">
+	            <%= flash[:notice] %>
+	        </div>
+        <% end %>
+		
+        <% unless flash[:warning].blank? %>
+	        <div id="warning">
+	            <%= flash[:warning] %>
+	        </div>
+	    <% end %>
+        
+		
+		<%= yield %>
     </body>
 </html>

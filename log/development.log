@@ -3965,3 +3965,191 @@ Processing UserController#login (for 127.0.0.1 at 2010-08-18 22:54:09) [POST]
 Rendering template within layouts/application
 Rendering user/login
 Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-19 22:25:52) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 223ms (View: 57, DB: 1) | 200 OK [http://localhost/user/login/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-19 22:27:45) [GET]
+
+ActionController::RoutingError (No route matches "/user/new." with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:27:51) [GET]
+Rendering template within layouts/application
+Rendering user/new
+Completed in 66ms (View: 61, DB: 1) | 200 OK [http://localhost/user/new]
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:28:54) [POST]
+  Parameters: {"commit"=>"Signup", "authenticity_token"=>"t9u4noAseiuBiJVVQjGJ/7qW3HoUXRwgGcYltsJTxUo=", "user"=>{"password_confirmation"=>"abc123", "username"=>"test1", "lastname"=>"ln1", "firstname"=>"fn1", "password"=>"abc123", "email"=>"test1@gmail.com"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test1') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'test1@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (24.3ms)[0m   [0mINSERT INTO "users" ("salt", "reset_token", "created_at", "remember_token_expires_at", "updated_at", "username", "hashed_password", "last_login_date", "lastname", "activation_id", "firstname", "remember_token", "email", "ip_address", "active") VALUES('mvsOBTOX8z', NULL, '2010-08-20 05:28:54', NULL, '2010-08-20 05:28:54', 'test1', '8dbdf7cb033c04d411e05b49a9c4a20c370b19ed', NULL, 'ln1', '7cbbdc1ce3cf0f2e9380cc1445c86d16f50be72d', 'fn1', NULL, 'test1@gmail.com', '127.0.0.1', NULL)[0m
+Sent mail to test1@gmail.com
+
+Date: Thu, 19 Aug 2010 22:28:54 -0700
+From: admin@tablevision.com
+To: test1@gmail.com
+Subject: Activate your account - tablevision
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Your account has been created.
+ 
+  Firstname: fn1
+  Lastname: ln1  
+ 
+Visit this url to activate your account:
+ 
+  http://localhost:3000/user/activate/7cbbdc1ce3cf0f2e9380cc1445c86d16f50be72d
+Redirected to http://localhost:3000/login/login
+Completed in 360ms (DB: 26) | 302 Found [http://localhost/user/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-19 22:28:54) [GET]
+
+ActionController::RoutingError (No route matches "/login/login" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:29:37) [GET]
+Rendering template within layouts/application
+Rendering user/new
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/user/new]
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:29:39) [POST]
+  Parameters: {"commit"=>"Signup", "authenticity_token"=>"t9u4noAseiuBiJVVQjGJ/7qW3HoUXRwgGcYltsJTxUo=", "user"=>{"password_confirmation"=>"", "username"=>"", "lastname"=>"", "firstname"=>"", "password"=>"", "email"=>""}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/new
+Completed in 60ms (View: 43, DB: 1) | 200 OK [http://localhost/user/new]
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:30:00) [POST]
+  Parameters: {"commit"=>"Signup", "authenticity_token"=>"t9u4noAseiuBiJVVQjGJ/7qW3HoUXRwgGcYltsJTxUo=", "user"=>{"password_confirmation"=>"abc1234", "username"=>"test1", "lastname"=>"ln2", "firstname"=>"fn2", "password"=>"abc1234", "email"=>"test1@gmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test1') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'test1@gmail.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/new
+Completed in 160ms (View: 11, DB: 1) | 200 OK [http://localhost/user/new]
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:30:04) [POST]
+  Parameters: {"commit"=>"Signup", "authenticity_token"=>"t9u4noAseiuBiJVVQjGJ/7qW3HoUXRwgGcYltsJTxUo=", "user"=>{"password_confirmation"=>"abc1234", "username"=>"test2", "lastname"=>"ln2", "firstname"=>"fn2", "password"=>"abc1234", "email"=>"test1@gmail.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'test1@gmail.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/new
+Completed in 37ms (View: 9, DB: 1) | 200 OK [http://localhost/user/new]
+
+
+Processing UserController#new (for 127.0.0.1 at 2010-08-19 22:30:07) [POST]
+  Parameters: {"commit"=>"Signup", "authenticity_token"=>"t9u4noAseiuBiJVVQjGJ/7qW3HoUXRwgGcYltsJTxUo=", "user"=>{"password_confirmation"=>"abc1234", "username"=>"test2", "lastname"=>"ln2", "firstname"=>"fn2", "password"=>"abc1234", "email"=>"test2@gmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'test2@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("salt", "reset_token", "created_at", "remember_token_expires_at", "updated_at", "username", "hashed_password", "last_login_date", "lastname", "activation_id", "firstname", "remember_token", "email", "ip_address", "active") VALUES('jQHpkKgEyb', NULL, '2010-08-20 05:30:07', NULL, '2010-08-20 05:30:07', 'test2', 'ce75c72a2e049707188c012c34d021a2bf5811ad', NULL, 'ln2', '29405a412446ce92c1fa7582287af8d0b253b639', 'fn2', NULL, 'test2@gmail.com', '127.0.0.1', NULL)[0m
+Sent mail to test2@gmail.com
+
+Date: Thu, 19 Aug 2010 22:30:07 -0700
+From: admin@tablevision.com
+To: test2@gmail.com
+Subject: Activate your account - tablevision
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Your account has been created.
+ 
+  Firstname: fn2
+  Lastname: ln2  
+ 
+Visit this url to activate your account:
+ 
+  http://localhost:3000/user/activate/29405a412446ce92c1fa7582287af8d0b253b639
+Redirected to http://localhost:3000/login/login
+Completed in 46ms (DB: 2) | 302 Found [http://localhost/user/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-19 22:30:07) [GET]
+
+ActionController::RoutingError (No route matches "/login/login" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-19 22:32:07) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-19 22:32:17) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"Fs95uzPozf7td/r+JL4MBrJK6JfNYK0x+FLSfXtXkWw=", "username"=>"test1", "password"=>"abc123"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'test1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 27ms (View: 5, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-19 22:33:28) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"Fs95uzPozf7td/r+JL4MBrJK6JfNYK0x+FLSfXtXkWw=", "username"=>"test1", "password"=>"asdas"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'test1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 32ms (View: 4, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-19 22:34:25) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 122ms (View: 25, DB: 1) | 200 OK [http://localhost/user/login]
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-08-19 22:34:28) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"i6spRDleatpGzqMHixDTgpfYbyPBKaFrjX7xegLI6p8=", "username"=>"dsds", "password"=>"dasd"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'dsds') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://localhost/user/login]

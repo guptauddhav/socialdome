@@ -129,20 +129,22 @@ class UserController < ApplicationController
   # authenticates the user.
   #
   def login
-    puts params[:username]
-    user = User.authenticate(params[:username], params[:password])
-    if user
-       self.current_user = user
-       new_cookie_flag = (params[:remember_me] == "1")
-       handle_remember_cookie! new_cookie_flag
-       flash[:notice] = "Logged in successfully."
-       # TODO :redirect_back_or_default(dashboard_url)
-       puts "Logged In."
-    else
-       logout_killing_session!
-       flash.now[:error] = "Invalid login or password."
-       #TODO : decide where to redirect to.
-    end
+    if request.post?
+      user = User.authenticate(params[:username], params[:password])
+      if user
+         self.current_user = user
+         new_cookie_flag = (params[:remember_me] == "1")
+         handle_remember_cookie! new_cookie_flag
+         flash[:notice] = "Logged in successfully."
+         # TODO :redirect_back_or_default(dashboard_url)
+         puts "Logged In."
+      else
+         logout_killing_session!
+         flash.now[:error] = "Invalid login or password."
+         #TODO : decide where to redirect to.
+         puts "Invalid Login"
+     end
+   end
   end
   
   def logout

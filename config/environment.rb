@@ -50,4 +50,9 @@ Rails::Initializer.run do |config|
   config.action_mailer.delivery_method = :test
   config.action_mailer.default_charset = "utf-8"
   
+  
+  # Configuration for logger (RAILS).
+  config.logger = Logger.new(STDOUT) 
+  config.log_level = Logger::WARN
+  
 end
